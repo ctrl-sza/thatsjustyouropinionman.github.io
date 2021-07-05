@@ -21,6 +21,9 @@
     --fs-h2: 2.25rem; 
     --fs-h3: 1.25rem; 
     --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+          0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 1000px) {
@@ -69,6 +72,8 @@ h1 { font-size: var(--fs-h1);}
 h2 { font-size: var(--fs-h2);}
 h3 { font-size: var(--fs-h3);}
 
+p { font-family: var(--ff-secondary);}
+
 .section__title {
     margin-bottom: .25em;
 }
@@ -90,6 +95,7 @@ h3 { font-size: var(--fs-h3);}
 .section__subtitle--intro, 
 .section__subtitle--about {
     background: var(--clr--accent);
+    padding: 0.25em;
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
 }
@@ -100,15 +106,75 @@ nav {display: none;}
 /* Intro section */
 .intro { 
     position: relative; 
+}
+
+.intro__img {
+    box-shadow: var(--bs);
 
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
     .intro {
         display: grid; 
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em ;
         grid-template-areas: 
             "img title"
             "img subtitle";
         grid-template-columns: min-content max-content;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 400px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2; 
+        text-align: right;
+        position: relative; 
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+/* My services section */
+.my-services {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+    /* background-size: cover; */
+}
+
+.section__title--services {
+    color: var(--clr--accent);
+    position: relative;
+}
+
+/* pseudo element */
+.section__title--services::after {
+    content: '';
+    display: block; 
+    width: 25%; 
+    height: 1px; 
+    margin: 0.5em auto 1em; 
+    background: currentColor;
+    /* opacity: 0.5; */
+}
+
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .service + .service {
+        margin-left: 3em;
     }
 }
