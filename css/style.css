@@ -133,7 +133,13 @@ p { font-family: var(--ff-secondary);}
 }
 
 /* header */
-nav {display: none;}
+
+.logo {
+    max-width: 400px;
+}
+
+
+
 
 /* Intro section */
 .intro { 
