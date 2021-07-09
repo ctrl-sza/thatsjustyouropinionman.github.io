@@ -16,6 +16,8 @@
     --clr-light: #fff; 
     --clr-dark: #303030; 
     --clr--accent: #bb80d3;
+    --clr--dark-accent: #795288;
+
 
     --fs-h1: 3rem; 
     --fs-h2: 2.25rem; 
@@ -290,4 +292,39 @@ nav {display: none;}
 .portfolio__item:focus .portfolio__img{
     transform: scale(1.2);
     opacity: 0.75;
+}
+
+/* footer */
+
+.footer {
+    background: rgb(231, 127, 8);
+    color: var(--clr--dark-accent);
+    text-align: center;
+    padding: 2.5em 0;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link:hover, 
+.social-list__link:hover {
+    opacity: 0.7;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 .5em;
+}
+
+.social-list__link {
+    padding: .5em;
 }
