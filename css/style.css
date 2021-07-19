@@ -61,7 +61,7 @@ strong {
     font-weight: var(--fw-bold); /* tbh not very noticeable with the font that I have chosen */
 }
 
-:focus {
+:focus:not(.nav-toggle) {
     outline: 3px solid var(--clr--accent);
     outline-offset: 3px;
 }
@@ -188,7 +188,31 @@ header {
     position: absolute;
     right: 2em;
     top: 2em;
+    z-index: 1000;
+}
 
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+    background: var(--clr--accent);
+
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translate(-6px);
+    background: var(--clr--accent);
+
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
 }
 
 .hamburger {
