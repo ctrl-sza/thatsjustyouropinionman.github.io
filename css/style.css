@@ -17,6 +17,7 @@
     --clr-dark: #303030; 
     --clr--accent: #bb80d3;
     --clr--dark-accent: #795288;
+    --clr--orange: rgb(231, 127, 8);
 
 
     --fs-h1: 3rem; 
@@ -69,6 +70,11 @@ strong {
     outline: 3px solid var(--clr--accent);
     outline-offset: 3px;
 }
+
+/* a {
+    text-decoration: none;
+    color: var(--clr-light);
+} */
 
 
 .btn { /* I can't get rid of that tiny space on the rhs of the text annoyingly... */
@@ -286,7 +292,7 @@ header {
     }
 }
 
-/* My services section */
+/* What I do section */
 .my-services {
     background-color: var(--clr-dark);
     color: var(--clr-light);
@@ -309,6 +315,20 @@ header {
     background: currentColor;
     /* opacity: 0.5; */
 }
+
+.service__title {
+    color: var(--clr-light);
+    text-decoration: none;
+    transition: transform 200ms ease-in-out;
+
+}
+
+.service__title:hover {
+    color: var(--clr--orange);
+    transform: scale(1.2);
+
+}
+
 
 .service {
     margin-bottom: 4em;
@@ -408,7 +428,7 @@ header {
 /* footer */
 
 .footer {
-    background: rgb(231, 127, 8);
+    background: var(--clr--orange);
     color: var(--clr--dark-accent);
     text-align: center;
     padding: 2.5em 0;
